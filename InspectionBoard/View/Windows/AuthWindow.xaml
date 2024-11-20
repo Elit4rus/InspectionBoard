@@ -1,0 +1,30 @@
+﻿<Window x:Class="InspectionBoard.View.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InspectionBoard.View.Windows"
+        mc:Ignorable="d"
+        Title="Окно авторизации" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="IdNumber"/>
+        <TextBlock Grid.Row="2" Text="Пароль"/>
+        <TextBox Name="LoginTb" Grid.Column="2" Grid.ColumnSpan="3"/>
+        <TextBox Name="PasswordTb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3"/>
+        <Button Name="LoginBtn" Grid.Row="5" Grid.ColumnSpan="3" Grid.Column="2" Content="Войти" Click="LoginBtn_Click"/>
+    </Grid>
+</Window>

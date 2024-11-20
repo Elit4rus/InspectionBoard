@@ -1,0 +1,73 @@
+﻿<Page x:Class="InspectionBoard.View.Pages.ExamSheetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InspectionBoard.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="544" d:DesignWidth="926"
+      Title="Страница экзаменационного листа" Background="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Результаты экзаменов" HorizontalAlignment="Center"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Выберите абитуриента:"/>
+                    <ComboBox x:Name="ApplicantCmb" Grid.Column="2" DisplayMemberPath="FullName" SelectedValuePath="ID" SelectionChanged="ApplicantCmb_SelectionChanged"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Первый предмет: "/>
+                    <TextBlock x:Name="FirstDisciplineNameTbl" Grid.Column="1"/>
+                    <TextBlock Grid.Row="2" Text="Второй предмет: "/>
+                    <TextBlock x:Name="SecondDisciplineNameTbl" Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock Grid.Row="4" Text="Золотая или серебряная медаль: " Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="MedalTbl" Grid.Row="4" Grid.Column="4"/>
+                    <Grid Grid.Row="6" Grid.ColumnSpan="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="AcceptBtn" Content="Принять" Click="AcceptBtn_Click"/>
+                        <Button x:Name="RejectBtn" Grid.Column="2" Content="Отклонить" Click="RejectBtn_Click"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
